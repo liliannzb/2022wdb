@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="rect"></div>
+        <script>
+            const rect = document.querySelector(".rect");
+            const person = {
+                age: 25,
+                name: "David",
+                gender: "male",
+            };
+
+            for (let s in person) {
+                rect.innerText +=  `${person[s]}\n`;
+            }
+        </script>
+    </body>
+</html>

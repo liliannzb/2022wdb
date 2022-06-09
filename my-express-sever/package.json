@@ -1,0 +1,14 @@
+{
+  "name": "no",
+  "version": "1.0.0",
+  "description": "my first express server.",
+  "main": "sever.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "lilian",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script >
+    let bill = 240;
+    const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2
+
+    console.log(tip)
+
+    // switch(bill){
+    //     case (bill >=50):
+    //     break;
+    //     case (bill =< 300):
+    //          console.log( bill * 0.15);
+    //     break;
+    //     default:
+    //     console.log( bill * 0.20);
+    //     }
+ 
+
+    function calcTip(bill){
+        if(bill >=50 && bill <=300){
+            return bill * 0.15
+        }else {
+            return bill * 0.2
+        }
+    }
+    console.log(calcTip(100));
+
+    const bills = [125, 555, 44]
+
+    
+    const bill_1 = calcTip(bills[0]);
+    const bill_2 = calcTip(bills[1]);
+    const bill_3 = calcTip(bills[2]);
+
+    const tips = [calcTip(bills[0]), calcTip(bills[1]),calcTip(bills[2])];
+
+    console.log(tips);
+    
+    const totle_1 = [bills[0],tips[0]];
+    const totle_2 = [bills[1],tips[1]];
+    const totle_3 = [bills[2],tips[2]];
+     
+    const totles = [totle_1, totle_2, totle_3]
+    console.log(totles)
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+    <script >
+    const calcAverage = (score1, score2, score3) =>
+    (score1 + score2 + score3) / 3
+
+    const scoreDolhins = calcAverage(44, 23, 71) ;
+    const scoreKoalas = calcAverage(65, 54,49);
+   
+    function checkWinner (avgDolhins, avgKoalas){
+   
+        if (avgDolhins > avgKoalas) {
+            console.log(`Dolhins win (${avgDolhins} vs ${avgKoalas})`)
+        }else if (avgKoalas > avgDolhins){
+            console.log(`Koalas win (${avgKoalas} vs ${avgDolhins})`)
+        }
+    }
+    
+    checkWinner(scoreDolhins, scoreKoalas)
+
+    
+    </script>
+
+</body>
+</html>
