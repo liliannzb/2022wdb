@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+
+<body>
+
+    <h1><%= kindOfDay %></h1>
+    <ul>
+        <!-- <li>buy food</li>
+        <li>cook food</li>
+        <li>eat food</li> -->
+
+
+        <%  for(let i=0; i< newItems.length; i++){ %>
+        <li><%= newItems[i] %></li>
+        <% } %>
+
+
+    </ul>
+
+    <form action="/" method="post">
+        <!-- <input type="checkbox" name="todolist" id="todo01" value="buy">
+        <label for="todo01"> buy food</label><br>
+        <input type="checkbox" name="todolist" id="todo02" value="cook">
+        <label for="todo02"> cook food</label><br>
+        <input type="checkbox" name="todolist" id="todo03" value="eat">
+        <label for="todo013"> eat food</label><br> -->
+        <input type="text" name="newItem">
+        <button type="submit"> 送出
+        </button>
+    </form>
+</body>
+
+</html>
