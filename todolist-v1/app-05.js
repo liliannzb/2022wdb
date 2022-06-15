@@ -24,7 +24,7 @@ app.get("/", function (req, res) {
 
   let day = today.toLocaleDateString("en-US", options);
 
-  res.render("list-04", { listTitle: day, newItems: items });
+  res.render("list-05", { listTitle: day, newItems: items });
 });
 
 app.post("/", (req, res) => {
@@ -38,19 +38,19 @@ app.post("/", (req, res) => {
     items.push(item);
     res.redirect("/");
   }
-
-  // res.render("list-03", { newItem: inp });不能分開放
-
-  // console.log(todo, inp);
 });
 app.get("/work", (req, res) => {
-  res.render("list-04", { listTitle: "Work List", newItems: workItem });
+  res.render("list-05", { listTitle: "Work List", newItems: workItem });
 });
 
 app.post("/work", (req, res) => {
   let item = req.body.newItem;
   workItem.push(item);
   res.redirect("/work");
+});
+
+app.get("/about", (req, res) => {
+  res.render("about");
 });
 
 app.listen(3001, function () {
