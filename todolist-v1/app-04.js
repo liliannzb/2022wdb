@@ -2,6 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 let items = ["buy food", "cook food", "eat food"];
+let workItem = [];
 
 const app = express();
 
@@ -23,19 +24,29 @@ app.get("/", function (req, res) {
 
   let day = today.toLocaleDateString("en-US", options);
 
-  res.render("list-03", { kindOfDay: day, newItems: items });
+  res.render("list-04", { listTitle: day, newItems: items });
 });
 
 app.post("/", (req, res) => {
+  console.log(req.body);
   const item = req.body.newItem;
 
   items.push(item);
   res.redirect("/");
   // res.render("list-03", { newItem: inp });不能分開放
 
-  console.log(todo, inp);
+  // console.log(todo, inp);
+});
+app.get("/work", (req, res) => {
+  res.render("list-04", { listTitle: "Work List", newItems: workItem });
 });
 
-app.listen(3002, function () {
-  console.log("Server started on port 3002.");
+app.post("/work", (req, res) => {
+  let item = req.body.newItem;
+  workItem.push(item);
+  res.redirect("/work");
+});
+
+app.listen(3001, function () {
+  console.log("Server started on port 3001.");
 });
