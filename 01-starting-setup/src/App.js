@@ -2,9 +2,10 @@ import ExpenseItem from "./components/ExpenseItem";
 import "./components/expense.css";
 import Card from "./components/Card";
 import NewExpense from "./components/newExpense/newExpense";
+import ExpensesFilter from "./components/newExpense/expenseFilter"
+import { useState } from "react";
 
-function App() {
-  const expenses = [
+ const dummy_expenses = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -25,17 +26,26 @@ function App() {
       date: new Date(2021, 5, 12)
     }
   ];
+function App() {
+ const [expenses, setExpenses] =useState(dummy_expenses)
 
   function addExpenseHandler(expense) {
-    console.log("I am app", expense);
+    setExpenses((prevExpense)=>{
+      return [expense, ...prevExpense]
+    })
   }
-
+ 
+    
   return (
+    
+    
     <div>
       <h2>Let's get started!</h2>
       <NewExpense onAddExpense={addExpenseHandler} />
+
       <Card className="expenses">
-        {expenses.map((el) => (
+      <ExpensesFilter/>
+      {expenses.length === 0 ? <p>No expense item</p> :  (expenses.map((el) => (
           <ExpenseItem
             key={el.id}
             id={el.id}
@@ -43,7 +53,8 @@ function App() {
             amount={el.amount}
             date={el.date}
           />
-        ))}
+        )))}
+       
       </Card>
     </div>
   );
